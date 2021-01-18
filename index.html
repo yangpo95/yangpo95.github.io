@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-19 00:55:25" itemprop="dateModified" datetime="2021-01-19T00:55:25+10:00">2021-01-19</time>
+                <time title="Modified: 2021-01-19 01:18:01" itemprop="dateModified" datetime="2021-01-19T01:18:01+10:00">2021-01-19</time>
               </span>
 
           
@@ -225,9 +225,9 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_LEDS_CTL=y</span><br></pre></td></tr></table></figure>
 
 <p>打开menuconfig 配置界面，如下：</p>
-<p><img src="kernel_build/menuconfig_1.PNG"></p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_1.PNG" alt="1"></p>
 <p>现按‘N’取消“Enable LEDS config ”配置，如下：</p>
-<p><img src="kernel_build/menuconfig_2.PNG"></p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_2.PNG" alt="2"></p>
 <p>.config里配置变成如下：</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CONFIG_LEDS_CTL is not set</span></span><br></pre></td></tr></table></figure>
 
@@ -235,17 +235,17 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">config LEDS_CTL                                                                 </span><br><span class="line">		bool <span class="string">&quot;Enable LEDS config&quot;</span></span><br><span class="line">		default y</span><br><span class="line">		help</span><br><span class="line">		  Enable LEDS config</span><br></pre></td></tr></table></figure>
 
 <p>这里的 config LEDS_CTL 就和 menuconfig 图形配置界面中“Enable LEDS config”对应如下:</p>
-<p><img src="kernel_build/menuconfig_1.PNG"></p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_1.PNG" alt="3"></p>
 <p>在“drivers/char/Kconfig ”文件的第一行，有个menu如下：</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">menu <span class="string">&quot;Character devices&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>这个”Character devices”和menuconfig的菜单对应，如下：</p>
-<p><img src="kernel_build/menuconfig_3.PNG"></p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_3.PNG" alt="4"></p>
 <p>然后在“drivers/Kconfig”文件里，有个menu, 且有个source包含了”drivers/char/Kconfig”，如下:</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">menu <span class="string">&quot;Device Drivers&quot;</span></span><br><span class="line">source <span class="string">&quot;drivers/char/Kconfig&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>即“Character devices”的上一级菜单”Device Drivers”，menuconfig的菜单如下：</p>
-<p><img src="kernel_build/menuconfig_4.PNG"></p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_4.PNG" alt="5"></p>
 <p>最后顶层的 Kconfig 文件， 如下：</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># For a description of the syntax of this configuration file,</span></span><br><span class="line"><span class="comment"># see Documentation/kbuild/kconfig-language.txt.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">mainmenu <span class="string">&quot;Linux/$ARCH $KERNELVERSION Kernel Configuration&quot;</span></span><br><span class="line"></span><br><span class="line">config SRCARCH</span><br><span class="line">	string</span><br><span class="line">	option env=<span class="string">&quot;SRCARCH&quot;</span></span><br><span class="line"></span><br><span class="line">source <span class="string">&quot;arch/$SRCARCH/Kconfig&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -263,7 +263,7 @@
 
 </li>
 </ul>
-<p><img src="kernel_build/menuconfig_5.PNG"></p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_5.PNG" alt="6"></p>
 <h3 id="Kconfig的基础语法"><a href="#Kconfig的基础语法" class="headerlink" title="Kconfig的基础语法"></a>Kconfig的基础语法</h3><p>内核配置脚本文件的语法也比较简单，主要包括如下几个方面。</p>
 <ul>
 <li><p>配置选项，即config，每个配置选项都必须指定类型，类型包括bool、tristate、string、hex和int，其中tristate和string是两种<br>基本类型，其他类型都基于这两种基本类型。</p>
