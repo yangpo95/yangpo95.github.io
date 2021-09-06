@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-06 22:47:25" itemprop="dateModified" datetime="2021-09-06T22:47:25+10:00">2021-09-06</time>
+                <time title="Modified: 2021-09-06 22:49:57" itemprop="dateModified" datetime="2021-09-06T22:49:57+10:00">2021-09-06</time>
               </span>
 
           
@@ -219,14 +219,78 @@
 </ul>
 </li>
 </ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/18/kernel_build/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<h2 id="Linux-内核顶层-Makefile"><a href="#Linux-内核顶层-Makefile" class="headerlink" title="Linux 内核顶层 Makefile"></a>Linux 内核顶层 Makefile</h2><p>顶层 Makefile 控制着 Linux 内核的编译流程，正在整理中。。。</p>
+<h2 id="Menuconfig的操作"><a href="#Menuconfig的操作" class="headerlink" title="Menuconfig的操作"></a>Menuconfig的操作</h2><h3 id="config文件和menuconfig的关系"><a href="#config文件和menuconfig的关系" class="headerlink" title=".config文件和menuconfig的关系"></a>.config文件和menuconfig的关系</h3><p>以 leds 小灯的驱动配置为例，介绍 menuconfig 具体执行过程。</p>
+<p>在修改之前，.config里配置如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_LEDS_CTL=y</span><br></pre></td></tr></table></figure>
+
+<p>打开menuconfig 配置界面，如下：</p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_1.PNG" alt="1"></p>
+<p>现按‘N’取消“Enable LEDS config ”配置，如下：</p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_2.PNG" alt="2"></p>
+<p>.config里配置变成如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CONFIG_LEDS_CTL is not set</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Kconfig和menuconfig的关系"><a href="#Kconfig和menuconfig的关系" class="headerlink" title="Kconfig和menuconfig的关系"></a>Kconfig和menuconfig的关系</h3><p>打开源码下的“drivers/char/Kconfig ”文件，如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">config LEDS_CTL                                                                 </span><br><span class="line">		bool <span class="string">&quot;Enable LEDS config&quot;</span></span><br><span class="line">		default y</span><br><span class="line">		help</span><br><span class="line">		  Enable LEDS config</span><br></pre></td></tr></table></figure>
+
+<p>这里的 config LEDS_CTL 就和 menuconfig 图形配置界面中“Enable LEDS config”对应如下:</p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_1.PNG" alt="3"></p>
+<p>在“drivers/char/Kconfig ”文件的第一行，有个menu如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">menu <span class="string">&quot;Character devices&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个”Character devices”和menuconfig的菜单对应，如下：</p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_3.PNG" alt="4"></p>
+<p>然后在“drivers/Kconfig”文件里，有个menu, 且有个source包含了”drivers/char/Kconfig”，如下:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">menu <span class="string">&quot;Device Drivers&quot;</span></span><br><span class="line">source <span class="string">&quot;drivers/char/Kconfig&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>即“Character devices”的上一级菜单”Device Drivers”，menuconfig的菜单如下：</p>
+<p><img src="/2021/01/18/kernel_build/menuconfig_4.PNG" alt="5"></p>
+<p>最后顶层的 Kconfig 文件， 如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># For a description of the syntax of this configuration file,</span></span><br><span class="line"><span class="comment"># see Documentation/kbuild/kconfig-language.txt.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">mainmenu <span class="string">&quot;Linux/$ARCH $KERNELVERSION Kernel Configuration&quot;</span></span><br><span class="line"></span><br><span class="line">config SRCARCH</span><br><span class="line">	string</span><br><span class="line">	option env=<span class="string">&quot;SRCARCH&quot;</span></span><br><span class="line"></span><br><span class="line">source <span class="string">&quot;arch/$SRCARCH/Kconfig&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>mainmenu “Linux/$ARCH $KERNELVERSION Kernel Configuration”是主菜单的的标题。</p>
+</li>
+<li><p>$ARCH 是定义在 Makefile 中的一个变量，这里配置是arm如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ARCH ?= arm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>KERNELVERSION 是内核版本号，在Makefile里配置如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">VERSION = 3                                                               </span><br><span class="line">PATCHLEVEL = 0</span><br><span class="line">SUBLEVEL = 15</span><br><span class="line">EXTRAVERSION =</span><br><span class="line">KERNELVERSION = <span class="variable">$(VERSION)</span><span class="variable">$(<span class="built_in">if</span> <span class="variable">$(PATCHLEVEL)</span>,.<span class="variable">$(PATCHLEVEL)</span>$(<span class="built_in">if</span> <span class="variable">$(SUBLEVEL)</span>,.<span class="variable">$(SUBLEVEL)</span>)</span>)<span class="variable">$(EXTRAVERSION)</span> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>$SRCARCH 和 ARCH 一样，在 Makefile 中定义如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SRCARCH	:= <span class="variable">$(ARCH)</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="/2021/01/18/kernel_build/menuconfig_5.PNG" alt="6"></p>
+<h3 id="Kconfig的基础语法"><a href="#Kconfig的基础语法" class="headerlink" title="Kconfig的基础语法"></a>Kconfig的基础语法</h3><p>内核配置脚本文件的语法也比较简单，主要包括如下几个方面。</p>
+<ul>
+<li><p>配置选项，即config，每个配置选项都必须指定类型，类型包括bool、tristate、string、hex和int，其中tristate和string是两种<br>基本类型，其他类型都基于这两种基本类型。</p>
+<ul>
+<li><strong>bool:</strong>   表示该CONFIG宏只能选择y(编译内核)或者n(不编译)</li>
+<li><strong>tristate:</strong> 表示该CONFIG宏可以设置y/m/n三种模式(tristate)，m代表编译为模块</li>
+<li><strong>string:</strong>  表示该CONFIG宏可以设为一串字符,比如**#define CONFIG_XXX “config test”**</li>
+<li><strong>hex:</strong>    表示该CONFIG宏可以设为一个十六进制,比如**#define CONFIG_XXX 0x1234**</li>
+<li><strong>int:</strong>     表示该CONFIG宏可以设为一个整数,比如**#define CONFIG_XXX 1234**</li>
+</ul>
+</li>
+<li><p>菜单结构，即menu，配置选项在菜单树结构中的位置可由两种方法决定。</p>
+<p>第一种，所有处于“menu”和“endmenu”之间的配置选项都会成”Device Drivers”的子菜单,且所有子菜单（config）选项都会继承父菜单（menu）的依赖关系。如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu <span class="string">&quot;Device Drivers&quot;</span></span><br><span class="line">source <span class="string">&quot;drivers/base/Kconfig&quot;</span></span><br><span class="line">source <span class="string">&quot;drivers/connector/Kconfig&quot;</span></span><br><span class="line">.....</span><br><span class="line">endmenu</span><br></pre></td></tr></table></figure>
+
+<p>第二种，通过分析依赖关系生成菜单结构，MODVERSIONS直接依赖MODULES，只有MODULES不为“n”时，该选项才可见。如下:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">config MODULES</span><br><span class="line">	bool <span class="string">&quot;Enable loadable module support&quot;</span></span><br><span class="line">config MODVERSIONS</span><br><span class="line">	bool <span class="string">&quot;Set version information on all module symbols&quot;</span></span><br><span class="line">	depends on MODULES</span><br><span class="line">comment <span class="string">&quot;module support disabled&quot;</span></span><br><span class="line">	depends on !MODULES</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>depends on:依赖项，反向依赖select，关系如下 </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">config A</span><br><span class="line">    depends on B</span><br><span class="line">    select C</span><br></pre></td></tr></table></figure>
+
+<p>  只有当CONFIG_B配置为Y时，CONFIG_A就会被配置成Y，然后CONFIG_C也就被配置成Y。</p>
+</li>
+<li><p>choice 语句将多个类似的配置选项组合在一起，供用户选择一组配置项。</p>
+</li>
+</ul>
+
       
     </div>
 
