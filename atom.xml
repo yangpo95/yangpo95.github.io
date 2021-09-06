@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Paul&#39;s Blog</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-09-06T12:50:57.043Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Paul Yang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kernel_build</title>
+    <link href="http://example.com/2021/01/18/kernel_build/"/>
+    <id>http://example.com/2021/01/18/kernel_build/</id>
+    <published>2021-01-17T14:43:47.000Z</published>
+    <updated>2021-09-06T12:50:57.043Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内核编译&quot;&gt;&lt;a href=&quot;#内核编译&quot; class=&quot;headerlink&quot; title=&quot;内核编译&quot;&gt;&lt;/a&gt;内核编译&lt;/h1&gt;&lt;h2 id=&quot;kernel编译步骤&quot;&gt;&lt;a href=&quot;#kernel编译步骤&quot; class=&quot;headerlink&quot; title=&quot;kernel编译步骤&quot;&gt;&lt;/a&gt;kernel编译步骤&lt;/h2&gt;&lt;h2 id=&quot;Linux-内核配置系统&quot;&gt;&lt;a href=&quot;#Linux-内核配置系统&quot; class=&quot;headerlink&quot; title=&quot;Linux 内核配置系统&quot;&gt;&lt;/a&gt;Linux 内核配置系统&lt;/h2&gt;&lt;p&gt;Linux 内核配置系统由三个部分组成。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Makefile 文件：分布在 Linux 内核源码中的 Makefile 文件，定义了 Linux 内核的编译规则。&lt;/li&gt;
+&lt;li&gt;Kconfig 文件：给用户提供配置选择的功能。&lt;/li&gt;
+&lt;li&gt;配置工具：这里使用的是 menuconfig，相比其它工具，这个工具使用的比较多。&lt;ul&gt;
+&lt;li&gt;make config，这是基于文本的最为传统的配置界面，不推荐使用。&lt;/li&gt;
+&lt;li&gt;make menuconfig，基于文本菜单的配置界面，不依赖于QT或GTK+，且非常直观。&lt;/li&gt;
+&lt;li&gt;make xconfig，要求 安装QT，用的比较少。&lt;/li&gt;
+&lt;li&gt;make gconfig，要求 安装GTK，用的比较少。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="kernel" scheme="http://example.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to set up OpenGrok in ubuntu</title>
+    <link href="http://example.com/2020/09/06/OpenGrok-build/"/>
+    <id>http://example.com/2020/09/06/OpenGrok-build/</id>
+    <published>2020-09-06T12:34:43.000Z</published>
+    <updated>2021-08-22T14:58:21.354Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Ubuntu&quot;&gt;&lt;a href=&quot;#Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu&quot;&gt;&lt;/a&gt;Ubuntu&lt;/h1&gt;&lt;h2 id=&quot;Install-opengrok&quot;&gt;&lt;a href=&quot;#Install-opengrok&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Tools" scheme="http://example.com/categories/Tools/"/>
+    
+    
+    <category term="tool" scheme="http://example.com/tags/tool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to set up a blog by hexo</title>
+    <link href="http://example.com/2020/09/06/hexo/"/>
+    <id>http://example.com/2020/09/06/hexo/</id>
+    <published>2020-09-06T04:28:52.000Z</published>
+    <updated>2020-09-06T09:41:54.348Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Install-hexo&quot;&gt;&lt;a href=&quot;#Install-hexo&quot; class=&quot;headerlink&quot; title=&quot;Install hexo&quot;&gt;&lt;/a&gt;Install hexo&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;install</summary>
+        
+      
+    
+    
+    
+    <category term="Tools" scheme="http://example.com/categories/Tools/"/>
+    
+    
+    <category term="tool" scheme="http://example.com/tags/tool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2020/09/06/hello-world/"/>
+    <id>http://example.com/2020/09/06/hello-world/</id>
+    <published>2020-09-06T04:22:09.734Z</published>
+    <updated>2020-09-06T04:22:09.734Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
