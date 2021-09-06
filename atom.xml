@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-06T13:31:20.685Z</updated>
+  <updated>2021-09-06T13:55:10.153Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/09/06/hello-world/"/>
+    <id>http://example.com/2021/09/06/hello-world/</id>
+    <published>2021-09-06T13:55:10.153Z</published>
+    <updated>2021-09-06T13:55:10.153Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>kernel_build</title>
@@ -42,15 +59,12 @@
     <link href="http://example.com/2020/09/06/OpenGrok-build/"/>
     <id>http://example.com/2020/09/06/OpenGrok-build/</id>
     <published>2020-09-06T12:34:43.000Z</published>
-    <updated>2021-08-22T14:58:21.354Z</updated>
+    <updated>2021-09-06T13:54:36.621Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><h2 id="Install-opengrok"><a href="#Install-opengrok" class="headerlink" title="Install opengrok"></a>Install opengrok</h2><p><a href="https://github.com/oracle/opengrok/releases">https://github.com/oracle/opengrok/releases</a></p><h2 id="Install-Tomcat"><a href="#Install-Tomcat" class="headerlink" title="Install Tomcat"></a>Install Tomcat</h2><p> <a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a></p><h2 id="Install-JDK"><a href="#Install-JDK" class="headerlink" title="Install JDK"></a>Install JDK</h2><p>sudo apt install openjdk-8-jdk</p><h2 id="Install-ctags"><a href="#Install-ctags" class="headerlink" title="Install ctags"></a>Install ctags</h2><p>sudo apt-get install ctags</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><h2 id="Install-opengrok"><a href="#Install-opengrok" class="headerlink" title="Install opengrok"></a>Install opengrok</h2><p><a href="https://github.com/oracle/opengrok/releases">https://github.com/oracle/opengrok/releases</a></p><a id="more"></a><h2 id="Install-Tomcat"><a href="#Install-Tomcat" class="headerlink" title="Install Tomcat"></a>Install Tomcat</h2><p> <a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a></p><h2 id="Install-JDK"><a href="#Install-JDK" class="headerlink" title="Install JDK"></a>Install JDK</h2><p>sudo apt install openjdk-8-jdk</p><h2 id="Install-ctags"><a href="#Install-ctags" class="headerlink" title="Install ctags"></a>Install ctags</h2><p>sudo apt-get install ctags</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Ubuntu&quot;&gt;&lt;a href=&quot;#Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu&quot;&gt;&lt;/a&gt;Ubuntu&lt;/h1&gt;&lt;h2 id=&quot;Install-opengrok&quot;&gt;&lt;a href=&quot;#Install-opengrok&quot; cla</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;Ubuntu&quot;&gt;&lt;a href=&quot;#Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu&quot;&gt;&lt;/a&gt;Ubuntu&lt;/h1&gt;&lt;h2 id=&quot;Install-opengrok&quot;&gt;&lt;a href=&quot;#Install-opengrok&quot; class=&quot;headerlink&quot; title=&quot;Install opengrok&quot;&gt;&lt;/a&gt;Install opengrok&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/oracle/opengrok/releases&quot;&gt;https://github.com/oracle/opengrok/releases&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -66,17 +80,14 @@
     <link href="http://example.com/2020/09/06/hexo/"/>
     <id>http://example.com/2020/09/06/hexo/</id>
     <published>2020-09-06T04:28:52.000Z</published>
-    <updated>2020-09-06T09:41:54.348Z</updated>
+    <updated>2021-09-06T13:54:47.017Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Install-hexo"><a href="#Install-hexo" class="headerlink" title="Install hexo"></a>Install hexo</h1><ul><li>install nodejs</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt install nodejs-legacy</span><br><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure><ul><li>change the Mirror</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><ul><li>install the update-version tool ‘n’</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install n -g</span><br><span class="line">sudo n stable</span><br></pre></td></tr></table></figure><ul><li>install hexo</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure><h1 id="Push-to-the-github-page"><a href="#Push-to-the-github-page" class="headerlink" title="Push to the github page"></a>Push to the github page</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/y5492853/article/details/79529410">https://blog.csdn.net/y5492853/article/details/79529410</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Install-hexo"><a href="#Install-hexo" class="headerlink" title="Install hexo"></a>Install hexo</h1><ul><li>install nodejs</li></ul><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt install nodejs-legacy</span><br><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure><ul><li>change the Mirror</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><ul><li>install the update-version tool ‘n’</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install n -g</span><br><span class="line">sudo n stable</span><br></pre></td></tr></table></figure><ul><li>install hexo</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure><h1 id="Push-to-the-github-page"><a href="#Push-to-the-github-page" class="headerlink" title="Push to the github page"></a>Push to the github page</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/y5492853/article/details/79529410">https://blog.csdn.net/y5492853/article/details/79529410</a></p>]]></content>
     
     
-      
-      
     <summary type="html">&lt;h1 id=&quot;Install-hexo&quot;&gt;&lt;a href=&quot;#Install-hexo&quot; class=&quot;headerlink&quot; title=&quot;Install hexo&quot;&gt;&lt;/a&gt;Install hexo&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;install nodejs&lt;/li&gt;
-&lt;/ul</summary>
-      
+&lt;/ul&gt;</summary>
     
     
     
@@ -84,26 +95,6 @@
     
     
     <category term="tool" scheme="http://example.com/tags/tool/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2020/09/06/hello-world/"/>
-    <id>http://example.com/2020/09/06/hello-world/</id>
-    <published>2020-09-06T04:22:09.734Z</published>
-    <updated>2020-09-06T04:22:09.734Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   

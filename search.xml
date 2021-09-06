@@ -2,8 +2,10 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2020/09/06/hello-world/</url>
+    <url>/2021/09/06/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -24,6 +26,8 @@
     <content><![CDATA[<h1 id="Install-hexo"><a href="#Install-hexo" class="headerlink" title="Install hexo"></a>Install hexo</h1><ul>
 <li>install nodejs</li>
 </ul>
+<a id="more"></a>
+
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt install nodejs-legacy</span><br><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure>
 <ul>
 <li>change the Mirror</li>
@@ -52,6 +56,8 @@
     <title>How to set up OpenGrok in ubuntu</title>
     <url>/2020/09/06/OpenGrok-build/</url>
     <content><![CDATA[<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><h2 id="Install-opengrok"><a href="#Install-opengrok" class="headerlink" title="Install opengrok"></a>Install opengrok</h2><p><a href="https://github.com/oracle/opengrok/releases">https://github.com/oracle/opengrok/releases</a></p>
+<a id="more"></a>
+
 <h2 id="Install-Tomcat"><a href="#Install-Tomcat" class="headerlink" title="Install Tomcat"></a>Install Tomcat</h2><p> <a href="https://tomcat.apache.org/">https://tomcat.apache.org/</a></p>
 <h2 id="Install-JDK"><a href="#Install-JDK" class="headerlink" title="Install JDK"></a>Install JDK</h2><p>sudo apt install openjdk-8-jdk</p>
 <h2 id="Install-ctags"><a href="#Install-ctags" class="headerlink" title="Install ctags"></a>Install ctags</h2><p>sudo apt-get install ctags</p>
