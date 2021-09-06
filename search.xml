@@ -68,7 +68,7 @@
     <url>/2021/01/18/kernel_build/</url>
     <content><![CDATA[<h1 id="内核编译"><a href="#内核编译" class="headerlink" title="内核编译"></a>内核编译</h1><h2 id="kernel编译步骤"><a href="#kernel编译步骤" class="headerlink" title="kernel编译步骤"></a>kernel编译步骤</h2><h2 id="Linux-内核配置系统"><a href="#Linux-内核配置系统" class="headerlink" title="Linux 内核配置系统"></a>Linux 内核配置系统</h2><p>Linux 内核配置系统由三个部分组成。</p>
 <ul>
-<li>Makefile 文件：分布在 Linux 内核源码中的 Makefile 文件，定义了 Linux 内核的编译规则。</li>
+<li>Makefile 文件：分布在 Linux 内核源码中的 Makefile 文件，定义了 Linux 内核的编译规则。<a id="more"></a></li>
 <li>Kconfig 文件：给用户提供配置选择的功能。</li>
 <li>配置工具：这里使用的是 menuconfig，相比其它工具，这个工具使用的比较多。<ul>
 <li>make config，这是基于文本的最为传统的配置界面，不推荐使用。</li>
@@ -78,8 +78,6 @@
 </ul>
 </li>
 </ul>
-<a id="more"></a>
-
 <h2 id="Linux-内核顶层-Makefile"><a href="#Linux-内核顶层-Makefile" class="headerlink" title="Linux 内核顶层 Makefile"></a>Linux 内核顶层 Makefile</h2><p>顶层 Makefile 控制着 Linux 内核的编译流程，正在整理中。。。</p>
 <h2 id="Menuconfig的操作"><a href="#Menuconfig的操作" class="headerlink" title="Menuconfig的操作"></a>Menuconfig的操作</h2><h3 id="config文件和menuconfig的关系"><a href="#config文件和menuconfig的关系" class="headerlink" title=".config文件和menuconfig的关系"></a>.config文件和menuconfig的关系</h3><p>以 leds 小灯的驱动配置为例，介绍 menuconfig 具体执行过程。</p>
 <p>在修改之前，.config里配置如下：</p>
