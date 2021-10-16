@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>About</title>
+      <link>https://yangpo95.github.io/about/</link>
+      <pubDate>Fri, 20 Aug 2021 21:38:52 +0800</pubDate>
+      
+      <guid>https://yangpo95.github.io/about/</guid>
+      
+        <description>&lt;p&gt;Nothing Special&amp;hellip;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>How to setup blog with hugo</title>
       <link>https://yangpo95.github.io/post/first/</link>
       <pubDate>Wed, 13 Oct 2021 23:13:42 +0800</pubDate>
