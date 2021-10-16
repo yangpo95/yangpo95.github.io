@@ -6,7 +6,7 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Oct 2021 23:13:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Oct 2021 21:40:03 +0800</lastBuildDate>
     
         <atom:link href="https://yangpo95.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -24,6 +24,107 @@
     </item>
     
     <item>
+      <title>How set up opengrok in windows</title>
+      <link>https://yangpo95.github.io/post/opengrok/</link>
+      <pubDate>Sat, 16 Oct 2021 21:40:03 +0800</pubDate>
+      
+      <guid>https://yangpo95.github.io/post/opengrok/</guid>
+      
+        <description>&lt;h1 id=&#34;environment-prepare&#34;&gt;Environment Prepare&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Install Tomcat&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download from &lt;a href=&#34;http://tomcat.apache.org/&#34;&gt;http://tomcat.apache.org/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Decompress it to  ”D:\apache-tomcat-9.0.46“.&lt;/li&gt;
+&lt;li&gt;Add new environment variable  &amp;ldquo;CATALINA_HOME&amp;rdquo;,  value is ”D:\apache-tomcat-9.0.46“.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install JDK&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Download from &lt;a href=&#34;https://www.oracle.com/java/technologies/downloads/#java8&#34;&gt;https://www.oracle.com/java/technologies/downloads/#java8&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install  to &amp;ldquo;D:\Program Files\Java\jdk1.8.0_201&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add &amp;ldquo;D:\Program Files\Java\jdk1.8.0_201\bin&amp;rdquo; to  environment variable &amp;ldquo;PATH&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check version&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ java -version
+java version &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.8.0_201&amp;#34;&lt;/span&gt;
+Java&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; SE Runtime Environment &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;build 1.8.0_201-b09&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+Java HotSpot&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; 64-Bit Server VM &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;build 25.201-b09, mixed mode&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install ctags&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Download from &lt;a href=&#34;http://ctags.sourceforge.net/&#34;&gt;http://ctags.sourceforge.net/&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Decompress it to &amp;ldquo;D:\ctags58&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add &amp;ldquo;D:\ctags58&amp;rdquo; to  environment variable &amp;ldquo;PATH&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install opengrok&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download from &lt;a href=&#34;https://github.com/oracle/opengrok/releases&#34;&gt;https://github.com/oracle/opengrok/releases&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Decompress it to &amp;ldquo;D:\opengrok-1.7.21&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;config-opengrok&#34;&gt;Config Opengrok&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Create &amp;ldquo;data&amp;rdquo; and &amp;ldquo;src&amp;rdquo; directory in  &amp;ldquo;D:\opengrok-1.7.21&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add code to &amp;ldquo;src&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the command as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;java -Xmx524m -jar &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\opengrok-1.7.21\lib\opengrok.jar&amp;#34;&lt;/span&gt; -W &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\opengrok-1.7.21\data\configuration.xml&amp;#34;&lt;/span&gt; -P -S -v -s &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\opengrok-1.7.21\src&amp;#34;&lt;/span&gt; -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\opengrok-1.7.21\data&amp;#34;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;copy &amp;ldquo;D:\opengrok-1.7.21\lib\source.war&amp;rdquo;  to &amp;ldquo;D:\apache-tomcat-9.0.46\webapps\&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;modify the file &amp;ldquo;D:\apache-tomcat-9.0.46\webapps\source\WEB-INF\web.xml&amp;rdquo;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;param-value&amp;gt;&lt;/span&gt;D:\opengrok-1.7.21\data\configuration.xml&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run http://localhost:8080/source&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>How driver and device match</title>
+      <link>https://yangpo95.github.io/post/linux-driver-device-match/</link>
+      <pubDate>Sat, 16 Oct 2021 21:12:09 +0800</pubDate>
+      
+      <guid>https://yangpo95.github.io/post/linux-driver-device-match/</guid>
+      
+        <description>&lt;p&gt;There are foure ways to match，as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;By device tree&lt;/li&gt;
+&lt;li&gt;By APCI&lt;/li&gt;
+&lt;li&gt;By id_table&lt;/li&gt;
+&lt;li&gt;By name&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>How to setup blog with hugo</title>
       <link>https://yangpo95.github.io/post/first/</link>
       <pubDate>Wed, 13 Oct 2021 23:13:42 +0800</pubDate>
@@ -36,8 +137,6 @@
 &lt;p&gt;Install Hugo&lt;/p&gt;
 &lt;p&gt;Get the latest veriosn from &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;https://github.com/gohugoio/hugo/releases&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Create a new site&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new site mylog
