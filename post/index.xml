@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Jane - A super concise theme for Hugo</title>
+    <title>Posts on Home</title>
     <link>http://localhost:1313/post/</link>
-    <description>Recent content in Posts on Jane - A super concise theme for Hugo</description>
+    <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Oct 2021 00:03:03 +1000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Oct 2021 23:13:42 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test</title>
-      <link>http://localhost:1313/post/test/</link>
-      <pubDate>Thu, 14 Oct 2021 00:03:03 +1000</pubDate>
+      <title>How to setup blog with hugo</title>
+      <link>http://localhost:1313/post/first/</link>
+      <pubDate>Wed, 13 Oct 2021 23:13:42 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/test/</guid>
-      <description>Hugo Test Testing&amp;hellip;</description>
+      <guid>http://localhost:1313/post/first/</guid>
+      <description>Local building   Install Hugo
+Get the latest veriosn from https://github.com/gohugoio/hugo/releases.
+  Create a new site
+hugo new site mylog   Download a hugo theme， just like ”hugo-theme-jane“ .
+cd myBlog git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane   Copy the example site content and config
+cp -r themes/jane/exampleSite/content ./ cp themes/jane/exampleSite/config.toml ./   Run the hugo server, then open the example site http://localhost:1313/ .
+hugo server   Connetct with github server   Run hugo, then generate the public directory.</description>
     </item>
     
   </channel>
