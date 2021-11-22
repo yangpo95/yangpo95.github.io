@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tags - Home</title>
+  <title>UART串口通信协议 - Home</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Paul" />
-  <meta name="description" content="Hugo theme jane example site." />
+  <meta name="description" content="通信协议基础 串行和并行 串行通信: 数据的传输是用一条传输线将数据一位接一位按顺序传送。 并行通信: 数据的传输是用多条传输线将数据的各个位同时传送" />
+
   <meta name="keywords" content="Hugo, theme, jane" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.88.1" />
 
 
-<link rel="canonical" href="https://yangpo95.github.io/tags/" />
-<link href="/tags/index.xml" rel="alternate" type="application/rss+xml" title="Home" />
+<link rel="canonical" href="https://yangpo95.github.io/post/uart/" />
+
 
 
 
@@ -58,15 +59,20 @@
 
 
 
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="Hugo theme jane example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://yangpo95.github.io/tags/" />
+<meta property="og:title" content="UART串口通信协议" />
+<meta property="og:description" content="通信协议基础 串行和并行 串行通信: 数据的传输是用一条传输线将数据一位接一位按顺序传送。 并行通信: 数据的传输是用多条传输线将数据的各个位同时传送" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangpo95.github.io/post/uart/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-22T12:14:45+08:00" />
+<meta property="article:modified_time" content="2021-11-22T12:14:45+08:00" />
 
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content="Hugo theme jane example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content="Hugo theme jane example site."/>
+<meta itemprop="name" content="UART串口通信协议">
+<meta itemprop="description" content="通信协议基础 串行和并行 串行通信: 数据的传输是用一条传输线将数据一位接一位按顺序传送。 并行通信: 数据的传输是用多条传输线将数据的各个位同时传送"><meta itemprop="datePublished" content="2021-11-22T12:14:45+08:00" />
+<meta itemprop="dateModified" content="2021-11-22T12:14:45+08:00" />
+<meta itemprop="wordCount" content="519">
+<meta itemprop="keywords" content="UART," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UART串口通信协议"/>
+<meta name="twitter:description" content="通信协议基础 串行和并行 串行通信: 数据的传输是用一条传输线将数据一位接一位按顺序传送。 并行通信: 数据的传输是用多条传输线将数据的各个位同时传送"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -283,78 +289,156 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-  
-  
-  
-  
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">UART串口通信协议</h1>
+      
+      <div class="post-meta">
+        <time datetime="2021-11-22" class="post-time">
+          2021-11-22
+        </time>
+        <div class="post-category">
+            <a href="https://yangpo95.github.io/categories/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"> 通信协议 </a>
+            
+          </div>
+        
 
-  
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="tag-cloud" style="padding: 5px 15px">
-      <div class="tag-cloud-title">
-        4 Tags In Total
+        
+        
+
+        
+        
       </div>
-      <div class="tag-cloud-tags">
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/driver/"
-          style="font-size:1rem">driver</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/kernel/"
-          style="font-size:1rem">kernel</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/tool/"
-          style="font-size:1.9463946303571862rem">tool</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/uart/"
-          style="font-size:1rem">uart</a>
-        
-      
-      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="通信协议基础">通信协议基础</h1>
+<p>串行和并行</p>
+<ul>
+<li>串行通信: 数据的传输是用<strong>一条</strong>传输线将数据<strong>一位接一位</strong>按<strong>顺序</strong>传送。</li>
+<li>并行通信: 数据的传输是用<strong>多条</strong>传输线将数据的各个位<strong>同时</strong>传送。</li>
+</ul>
+<p>串行通信按时钟的同步方式分为:</p>
+<ul>
+<li>同步通信: 带时钟信号传输, 如I2C, SPI</li>
+<li>异步通信: 不带时钟信号传输, 如UART</li>
+</ul>
+<p>串行通信按数据的传输方向分为:</p>
+<ul>
+<li>
+<p>单工通信: 数据传输只支持数据在<strong>一个方向</strong>上传输</p>
+</li>
+<li>
+<p>双工通信: 二台设备间进行<strong>双向</strong>数据传输</p>
+<ul>
+<li>
+<p>全双工通信: <strong>同时</strong>进行双向数据传输</p>
+</li>
+<li>
+<p>半双工通信: 双向数据传输，但不能同时进行</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="uart定义">UART定义</h1>
+<p>通用异步收发传输器（Universal Asynchronous Receiver/Transmitter)，通常称作UART。</p>
+<p>UART是一种通用的串行, 异步通信总线, 有两条数据线, 可以实现全双工的发送和接收。</p>
+<h1 id="uart帧格式">UART帧格式</h1>
+<p><img src="/img/uart.png" alt="image-uart"></p>
+<p>其中各位的含义如下：</p>
+<ul>
+<li><strong>起始位</strong>：发送1位逻辑0（低电平），开始传输数据。</li>
+<li><strong>数据位</strong>：可以是5~8位的数据，先发低位，再发高位，一般常见的就是8位（1个字节），其他的如7位的ASCII码。</li>
+<li><strong>校验位</strong>：奇偶校验，将数据位加上校验位，1的位数为偶数（偶校验），1的位数4为奇数（奇校验）。</li>
+<li><strong>停止位</strong>：停止位是数据传输结束的标志，可以是1/1.5/2位的逻辑1（高电平）。</li>
+<li><strong>空闲位</strong>：空闲时数据线为高电平状态，代表无数据传输。</li>
+</ul>
+
     </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Paul</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2021-11-22
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://yangpo95.github.io/tags/uart/">UART</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/opengrok/">
+            <span class="next-text nav-default">How set up opengrok in windows</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
   
   
 
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
 
         </div>
       </div>

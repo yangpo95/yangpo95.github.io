@@ -6,7 +6,7 @@
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Oct 2021 21:40:03 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 Nov 2021 12:14:45 +0800</lastBuildDate>
     
         <atom:link href="https://yangpo95.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,58 @@
       <guid>https://yangpo95.github.io/about/</guid>
       
         <description>&lt;p&gt;Nothing Special&amp;hellip;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>UART串口通信协议</title>
+      <link>https://yangpo95.github.io/post/uart/</link>
+      <pubDate>Mon, 22 Nov 2021 12:14:45 +0800</pubDate>
+      
+      <guid>https://yangpo95.github.io/post/uart/</guid>
+      
+        <description>&lt;h1 id=&#34;通信协议基础&#34;&gt;通信协议基础&lt;/h1&gt;
+&lt;p&gt;串行和并行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;串行通信: 数据的传输是用&lt;strong&gt;一条&lt;/strong&gt;传输线将数据&lt;strong&gt;一位接一位&lt;/strong&gt;按&lt;strong&gt;顺序&lt;/strong&gt;传送。&lt;/li&gt;
+&lt;li&gt;并行通信: 数据的传输是用&lt;strong&gt;多条&lt;/strong&gt;传输线将数据的各个位&lt;strong&gt;同时&lt;/strong&gt;传送。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;串行通信按时钟的同步方式分为:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同步通信: 带时钟信号传输, 如I2C, SPI&lt;/li&gt;
+&lt;li&gt;异步通信: 不带时钟信号传输, 如UART&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;串行通信按数据的传输方向分为:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;单工通信: 数据传输只支持数据在&lt;strong&gt;一个方向&lt;/strong&gt;上传输&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;双工通信: 二台设备间进行&lt;strong&gt;双向&lt;/strong&gt;数据传输&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;全双工通信: &lt;strong&gt;同时&lt;/strong&gt;进行双向数据传输&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;半双工通信: 双向数据传输，但不能同时进行&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;uart定义&#34;&gt;UART定义&lt;/h1&gt;
+&lt;p&gt;通用异步收发传输器（Universal Asynchronous Receiver/Transmitter)，通常称作UART。&lt;/p&gt;
+&lt;p&gt;UART是一种通用的串行, 异步通信总线, 有两条数据线, 可以实现全双工的发送和接收。&lt;/p&gt;
+&lt;h1 id=&#34;uart帧格式&#34;&gt;UART帧格式&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://yangpo95.github.io/img/uart.png&#34; alt=&#34;image-uart&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中各位的含义如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;起始位&lt;/strong&gt;：发送1位逻辑0（低电平），开始传输数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据位&lt;/strong&gt;：可以是5~8位的数据，先发低位，再发高位，一般常见的就是8位（1个字节），其他的如7位的ASCII码。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;校验位&lt;/strong&gt;：奇偶校验，将数据位加上校验位，1的位数为偶数（偶校验），1的位数4为奇数（奇校验）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;停止位&lt;/strong&gt;：停止位是数据传输结束的标志，可以是1/1.5/2位的逻辑1（高电平）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;空闲位&lt;/strong&gt;：空闲时数据线为高电平状态，代表无数据传输。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
     </item>
