@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tags - Home</title>
+  <title>PMON的编译和更新 - Home</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Paul" />
-  <meta name="description" content="Hugo theme jane example site." />
+  <meta name="description" content="" />
+
   <meta name="keywords" content="Hugo, theme, jane" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.88.1" />
 
 
-<link rel="canonical" href="https://yangpo95.github.io/tags/" />
-<link href="/tags/index.xml" rel="alternate" type="application/rss+xml" title="Home" />
+<link rel="canonical" href="https://yangpo95.github.io/post/pmon%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E6%9B%B4%E6%96%B0/" />
+
 
 
 
@@ -58,15 +59,20 @@
 
 
 
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="Hugo theme jane example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://yangpo95.github.io/tags/" />
+<meta property="og:title" content="PMON的编译和更新" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yangpo95.github.io/post/pmon%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E6%9B%B4%E6%96%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-22T12:14:45+08:00" />
+<meta property="article:modified_time" content="2021-11-22T12:14:45+08:00" />
 
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content="Hugo theme jane example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content="Hugo theme jane example site."/>
+<meta itemprop="name" content="PMON的编译和更新">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-11-22T12:14:45+08:00" />
+<meta itemprop="dateModified" content="2021-11-22T12:14:45+08:00" />
+<meta itemprop="wordCount" content="1339">
+<meta itemprop="keywords" content="PMON,loongson," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PMON的编译和更新"/>
+<meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -283,100 +289,235 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-  
-  
-  
-  
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">PMON的编译和更新</h1>
+      
+      <div class="post-meta">
+        <time datetime="2021-11-22" class="post-time">
+          2021-11-22
+        </time>
+        <div class="post-category">
+            <a href="https://yangpo95.github.io/categories/%E9%BE%99%E8%8A%AF/"> 龙芯 </a>
+            
+          </div>
+        
 
-  
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="tag-cloud" style="padding: 5px 15px">
-      <div class="tag-cloud-title">
-        6 Tags In Total
+        
+        
+
+        
+        
       </div>
-      <div class="tag-cloud-tags">
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/driver/"
-          style="font-size:1rem">driver</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/kernel/"
-          style="font-size:1rem">kernel</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/loongson/"
-          style="font-size:1rem">loongson</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/pmon/"
-          style="font-size:1rem">pmon</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/tool/"
-          style="font-size:1.9463946303571862rem">tool</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://yangpo95.github.io/tags/uart/"
-          style="font-size:1rem">uart</a>
-        
-      
-      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#编译环境">编译环境</a></li>
+    <li><a href="#安装编译器">安装编译器</a></li>
+    <li><a href="#编译pmon">编译PMON</a></li>
+    <li><a href="#在机器上更新pmon">在机器上更新PMON</a></li>
+    <li><a href="#附加说明">附加说明</a>
+      <ul>
+        <li><a href="#pmon的更新">PMON的更新</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h2 id="编译环境">编译环境</h2>
+<ul>
+<li>PMON的编译环境是交叉编译，即在X86机器上进行编译，编译出MIPS版本的PMON二进制。</li>
+<li>系统要求为X86 32位linux操作系统。实验测试Ubuntu，Debian，Fedora，CentOS都可以使用。</li>
+<li>系统中需要先安装一些开发包：flex，bison，xutils-dev。</li>
+<li>Fedora系统使用yum install 命令安装，Ubuntu、Debian系统使用apt-get install命令安装。</li>
+</ul>
+<h2 id="安装编译器">安装编译器</h2>
+<ul>
+<li>在X86 Linux机器上，<a href="http://ftp.loongnix.org/toolchain/gcc/release/CROSS_COMPILE/gcc-4.4.0-pmon.tgz">编译器下载gcc-4.4.0</a></li>
+<li>保存在任意位置。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># mkdir  -p  /usr/local/comp/mips-elf/</span>
+<span style="color:#75715e"># tar -zxvf gcc-4.4.0-pmon.tgz -C /usr/local/comp/mips-elf/</span>
+</code></pre></div><ul>
+<li>设置如下环境变量：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vi ~/.bash_profile
+
+在文件末尾添加下面三行：
+export LD_LIBRARY_PATH<span style="color:#f92672">=</span>/usr/local/comp/mips-elf/gcc-4.4.0-pmon/lib:
+export CROSS_COMPILE<span style="color:#f92672">=</span>mipsel-linux-
+export PATH<span style="color:#f92672">=</span>/usr/local/comp/mips-elf/gcc-4.4.0-pmon/bin/:$PATH
+</code></pre></div><h2 id="编译pmon">编译PMON</h2>
+<ul>
+<li>下载PMON源代码，</li>
+</ul>
+<pre tabindex="0"><code>$ git clone  http://cgit.loongnix.org/cgit/pmon-loongson3
+$ cd  pmon-loongson3/
+</code></pre><ul>
+<li>下一步很重要，根据要编译平台的不同，进入不同的子目录。</li>
+</ul>
+<p>例如：如果要编译3A780E单路的PMON，则进入zloader.3a780e子目录；如果要编译3A双路的PMON，则进入zloader.3aserver。 其它还有很多种平台的子目录。    为例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd zloader.3a780e
+$ make cfg
+$ make tgt<span style="color:#f92672">=</span>rom
+$ make dtb
+生成三个文件：gzrom.bin、LS2K.dtb、gzrom-dtb.bin
+</code></pre></div><ul>
+<li>编译正常结束后，当前目录下有一个<strong>gzrom.bin</strong>文件，这就是PMON的二进制</li>
+</ul>
+<h2 id="在机器上更新pmon">在机器上更新PMON</h2>
+<ul>
+<li>龙芯PMON支持在线更新功能，即在本机上启动PMON，在命令行上更新上面编译出来的二进制</li>
+<li>在线更新命令为:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># load -r -f 0xbfc00000  URL</span>
+如下：
+<span style="color:#75715e"># ifconfig syn0 192.168.0.150 (temp)</span>
+<span style="color:#75715e"># load_dtb LS2K.dtb</span>
+<span style="color:#75715e"># load –r –f 0xbfc00000 tftp://192.168.0.189/gzrom.bin</span>
+</code></pre></div><ul>
+<li>
+<p>其中URL指向PMON二进制所在的位置，龙芯支持通过U盘和网络两种形式。</p>
+</li>
+<li>
+<p>由于不同的开发板的具体命令可能不同，请参考相应的开发板手册。</p>
+</li>
+<li>
+<p>以龙芯3A780E单路为例，请下载 <a href="http://www.loongson.cn/uploadfile/devsysmanual/LS3A-RS780E-s-develop_board_user_manual.pdf">《龙芯 3A+RS780E 单路开发板技术规格书》</a>，在“第4.1.2.3 PMON 的更新”中有详细描述。</p>
+</li>
+</ul>
+<h2 id="附加说明">附加说明</h2>
+<ul>
+<li>如果在编译时提示“缺少 pmoncfg文件”，通过以下步骤解决：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd tools/pmoncfg
+$ make
+此步骤将生成pmoncfg文件
+<span style="color:#75715e"># cp pmoncfg /usr/bin  （以root身份执行此命令）</span>
+</code></pre></div><ul>
+<li>执行 make cfg all tgt=rom
+报错：/bin/sh: 1: mipsel-linux-gcc: not found
+LS1B是32位的，而ubuntu是64位的，需要安装相应的库来解决。。</li>
+</ul>
+<h3 id="pmon的更新">PMON的更新</h3>
+<p>使用软件更新</p>
+<ul>
+<li>由于PMON文件具体存放的介质不同，更新方式稍有区别，主要是介质的文件格式和设备标识符不同，可用devls查看不同的设备标识符，如硬盘在有的PMON上显示wd0，有的显示sd0等，使用如下的load命令后，需要输入reboot重新启动才能生效，特别需要注意的是，软件升级有可能导致系统无法启动，请谨慎操作，如果升级失败就需要使用专业的烧录器烧录芯片</li>
+<li>从TFTP服务器上更新BIOS
+<ul>
+<li>load -r -f 0xbfc00000 tftp://10.2.5.22/gzrom.bin (假设PMON更新文件gzrom.bin放在内部的tftp服务器10.2.5.22上)</li>
+</ul>
+</li>
+<li>从硬盘上更新PMON
+<ul>
+<li>load -r -f 0xbfc00000 /dev/fs/ext2@wd0/boot/gzrom.bin (假设PMON更新文件gzrom.bin放在硬盘的/boot目录下)</li>
+</ul>
+</li>
+<li>从U盘上更新PMON
+<ul>
+<li>load -r -f 0xbfc00000 /dev/fs/ext2@usb0/gzrom.bin (假设PMON更新文件gzrom.bin放在ext2格式的U盘的根目录下，如果U盘是fat格式，要写fat@usb0) =》  load -r -f 0xbfc00000 /dev/fs/fat@usb0/gzrom.bin</li>
+</ul>
+</li>
+<li>从USB光驱上更新PMON
+<ul>
+<li>load -r -f 0xbfc00000 /dev/fs/iso9660@usb0/boot/gzrom.bin (假设PMON更新文件gzrom.bin放在光盘的/boot目录下)</li>
+</ul>
+</li>
+<li>从sata光驱上更新PMON
+<ul>
+<li>load -r -f 0xbfc00000 /dev/fs/iso9660@cd0/boot/gzrom.bin (假设PMON更新文件gzrom.bin放在光盘的/boot目录下)</li>
+</ul>
+</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<p><a href="http://www.loongnix.org/index.php/PMON%E7%BC%96%E8%AF%91%E6%96%B9%E6%B3%95">http://www.loongnix.org/index.php/PMON%E7%BC%96%E8%AF%91%E6%96%B9%E6%B3%95</a></p>
     </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Paul</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2021-11-22
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://yangpo95.github.io/tags/pmon/">PMON</a>
+          <a href="https://yangpo95.github.io/tags/loongson/">loongson</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/uart/">
+            <span class="next-text nav-default">UART串口通信协议</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
   
   
 
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
 
         </div>
       </div>

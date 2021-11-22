@@ -24,6 +24,123 @@
     </item>
     
     <item>
+      <title>PMON的编译和更新</title>
+      <link>https://yangpo95.github.io/post/pmon%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E6%9B%B4%E6%96%B0/</link>
+      <pubDate>Mon, 22 Nov 2021 12:14:45 +0800</pubDate>
+      
+      <guid>https://yangpo95.github.io/post/pmon%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E6%9B%B4%E6%96%B0/</guid>
+      
+        <description>&lt;h2 id=&#34;编译环境&#34;&gt;编译环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;PMON的编译环境是交叉编译，即在X86机器上进行编译，编译出MIPS版本的PMON二进制。&lt;/li&gt;
+&lt;li&gt;系统要求为X86 32位linux操作系统。实验测试Ubuntu，Debian，Fedora，CentOS都可以使用。&lt;/li&gt;
+&lt;li&gt;系统中需要先安装一些开发包：flex，bison，xutils-dev。&lt;/li&gt;
+&lt;li&gt;Fedora系统使用yum install 命令安装，Ubuntu、Debian系统使用apt-get install命令安装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装编译器&#34;&gt;安装编译器&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在X86 Linux机器上，&lt;a href=&#34;http://ftp.loongnix.org/toolchain/gcc/release/CROSS_COMPILE/gcc-4.4.0-pmon.tgz&#34;&gt;编译器下载gcc-4.4.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;保存在任意位置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# mkdir  -p  /usr/local/comp/mips-elf/&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# tar -zxvf gcc-4.4.0-pmon.tgz -C /usr/local/comp/mips-elf/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;设置如下环境变量：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ vi ~/.bash_profile
+
+在文件末尾添加下面三行：
+export LD_LIBRARY_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr/local/comp/mips-elf/gcc-4.4.0-pmon/lib:
+export CROSS_COMPILE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;mipsel-linux-
+export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr/local/comp/mips-elf/gcc-4.4.0-pmon/bin/:$PATH
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;编译pmon&#34;&gt;编译PMON&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;下载PMON源代码，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git clone  http://cgit.loongnix.org/cgit/pmon-loongson3
+$ cd  pmon-loongson3/
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;下一步很重要，根据要编译平台的不同，进入不同的子目录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如：如果要编译3A780E单路的PMON，则进入zloader.3a780e子目录；如果要编译3A双路的PMON，则进入zloader.3aserver。 其它还有很多种平台的子目录。    为例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cd zloader.3a780e
+$ make cfg
+$ make tgt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;rom
+$ make dtb
+生成三个文件：gzrom.bin、LS2K.dtb、gzrom-dtb.bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;编译正常结束后，当前目录下有一个&lt;strong&gt;gzrom.bin&lt;/strong&gt;文件，这就是PMON的二进制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;在机器上更新pmon&#34;&gt;在机器上更新PMON&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;龙芯PMON支持在线更新功能，即在本机上启动PMON，在命令行上更新上面编译出来的二进制&lt;/li&gt;
+&lt;li&gt;在线更新命令为:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# load -r -f 0xbfc00000  URL&lt;/span&gt;
+如下：
+&lt;span style=&#34;color:#75715e&#34;&gt;# ifconfig syn0 192.168.0.150 (temp)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# load_dtb LS2K.dtb&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# load –r –f 0xbfc00000 tftp://192.168.0.189/gzrom.bin&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;其中URL指向PMON二进制所在的位置，龙芯支持通过U盘和网络两种形式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;由于不同的开发板的具体命令可能不同，请参考相应的开发板手册。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以龙芯3A780E单路为例，请下载 &lt;a href=&#34;http://www.loongson.cn/uploadfile/devsysmanual/LS3A-RS780E-s-develop_board_user_manual.pdf&#34;&gt;《龙芯 3A+RS780E 单路开发板技术规格书》&lt;/a&gt;，在“第4.1.2.3 PMON 的更新”中有详细描述。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;附加说明&#34;&gt;附加说明&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如果在编译时提示“缺少 pmoncfg文件”，通过以下步骤解决：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cd tools/pmoncfg
+$ make
+此步骤将生成pmoncfg文件
+&lt;span style=&#34;color:#75715e&#34;&gt;# cp pmoncfg /usr/bin  （以root身份执行此命令）&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;执行 make cfg all tgt=rom
+报错：/bin/sh: 1: mipsel-linux-gcc: not found
+LS1B是32位的，而ubuntu是64位的，需要安装相应的库来解决。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pmon的更新&#34;&gt;PMON的更新&lt;/h3&gt;
+&lt;p&gt;使用软件更新&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;由于PMON文件具体存放的介质不同，更新方式稍有区别，主要是介质的文件格式和设备标识符不同，可用devls查看不同的设备标识符，如硬盘在有的PMON上显示wd0，有的显示sd0等，使用如下的load命令后，需要输入reboot重新启动才能生效，特别需要注意的是，软件升级有可能导致系统无法启动，请谨慎操作，如果升级失败就需要使用专业的烧录器烧录芯片&lt;/li&gt;
+&lt;li&gt;从TFTP服务器上更新BIOS
+&lt;ul&gt;
+&lt;li&gt;load -r -f 0xbfc00000 tftp://10.2.5.22/gzrom.bin (假设PMON更新文件gzrom.bin放在内部的tftp服务器10.2.5.22上)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;从硬盘上更新PMON
+&lt;ul&gt;
+&lt;li&gt;load -r -f 0xbfc00000 /dev/fs/ext2@wd0/boot/gzrom.bin (假设PMON更新文件gzrom.bin放在硬盘的/boot目录下)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;从U盘上更新PMON
+&lt;ul&gt;
+&lt;li&gt;load -r -f 0xbfc00000 /dev/fs/ext2@usb0/gzrom.bin (假设PMON更新文件gzrom.bin放在ext2格式的U盘的根目录下，如果U盘是fat格式，要写fat@usb0) =》  load -r -f 0xbfc00000 /dev/fs/fat@usb0/gzrom.bin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;从USB光驱上更新PMON
+&lt;ul&gt;
+&lt;li&gt;load -r -f 0xbfc00000 /dev/fs/iso9660@usb0/boot/gzrom.bin (假设PMON更新文件gzrom.bin放在光盘的/boot目录下)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;从sata光驱上更新PMON
+&lt;ul&gt;
+&lt;li&gt;load -r -f 0xbfc00000 /dev/fs/iso9660@cd0/boot/gzrom.bin (假设PMON更新文件gzrom.bin放在光盘的/boot目录下)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.loongnix.org/index.php/PMON%E7%BC%96%E8%AF%91%E6%96%B9%E6%B3%95&#34;&gt;http://www.loongnix.org/index.php/PMON%E7%BC%96%E8%AF%91%E6%96%B9%E6%B3%95&lt;/a&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>UART串口通信协议</title>
       <link>https://yangpo95.github.io/post/uart/</link>
       <pubDate>Mon, 22 Nov 2021 12:14:45 +0800</pubDate>
@@ -70,8 +187,7 @@
 &lt;li&gt;&lt;strong&gt;校验位&lt;/strong&gt;：奇偶校验，将数据位加上校验位，1的位数为偶数（偶校验），1的位数4为奇数（奇校验）。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;停止位&lt;/strong&gt;：停止位是数据传输结束的标志，可以是1/1.5/2位的逻辑1（高电平）。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;空闲位&lt;/strong&gt;：空闲时数据线为高电平状态，代表无数据传输。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/ul&gt;</description>
       
     </item>
     

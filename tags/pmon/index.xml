@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PMON on Home</title>
+    <link>https://yangpo95.github.io/tags/pmon/</link>
+    <description>Recent content in PMON on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 Nov 2021 12:14:45 +0800</lastBuildDate><atom:link href="https://yangpo95.github.io/tags/pmon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PMON的编译和更新</title>
+      <link>https://yangpo95.github.io/post/pmon%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E6%9B%B4%E6%96%B0/</link>
+      <pubDate>Mon, 22 Nov 2021 12:14:45 +0800</pubDate>
+      
+      <guid>https://yangpo95.github.io/post/pmon%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E6%9B%B4%E6%96%B0/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
